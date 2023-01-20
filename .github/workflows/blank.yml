@@ -44,9 +44,11 @@ jobs:
       
       - name: Test5
         run: |
+          echo 1A
           git config --global user.email "mateus.b.benedito@gmail.com"
+          echo 1B
           git config --global user.name "mateusbbenedito"
-          echo 1
+          echo 1C
           git checkout -b feature/teste
           echo 2 $GITHUB_TOKEN
           git commit -m 'teste'
