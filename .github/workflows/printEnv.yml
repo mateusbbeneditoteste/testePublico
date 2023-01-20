@@ -1,0 +1,13 @@
+name: printEnv
+on: workflow_dispatch:
+jobs:
+  exec:
+    name: First job
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Open checkout
+        uses: actions/checkout@v2
+      - name: Print Env
+        run: env |sort
+
+      
