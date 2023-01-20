@@ -42,16 +42,24 @@ jobs:
       - name: Test4
         run: git status
       
-      - name: Test5
-        run: |
-          echo 1A
-          git config --global user.email "mateus.b.benedito@gmail.com"
-          echo 1B
-          git config --global user.name "mateusbbenedito"
-          echo 1C
-          git checkout -b feature/teste
-          echo 2 $GITHUB_TOKEN
-          git commit -m 'teste'
-          echo 3
-          git push
-          echo 4
+      - name: Create new branch
+        uses: actions/create-branch@v2
+        with:
+          branch: new-feature
+          commit-message: 'Initial commit for new feature'
+          commit-author: 'Your Name <youremail@example.com>'
+        
+#      - name: Test5
+#        run: |
+#          echo 1A
+#          git config --global user.email "mateus.b.benedito@gmail.com"
+#          echo 1B
+#          git config --global user.name "mateusbbenedito"
+#          echo 1C
+#          git checkout -b feature/teste
+#          echo 2 $GITHUB_TOKEN
+#          git remote add origin https://x-access-token:$GITHUB_TOKEN@github.com/OWNER/REPO.git
+#          git commit -m 'teste'
+#          echo 3
+#          git push
+#          echo 4
