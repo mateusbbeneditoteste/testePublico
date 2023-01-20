@@ -43,11 +43,18 @@ jobs:
         run: git status
       
       - name: Create new branch
-        uses: actions/create-branch@v2
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: new-feature
-          commit-message: 'Initial commit for new feature'
-          commit-author: 'Your Name <youremail@example.com>'
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
         
 #      - name: Test5
 #        run: |
