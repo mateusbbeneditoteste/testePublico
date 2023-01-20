@@ -1,0 +1,17 @@
+name: Create Branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-lastest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Create branch
+        run: |
+          git branch branch/my-new-branch
+          git push -u origin branch/my-new-branch
