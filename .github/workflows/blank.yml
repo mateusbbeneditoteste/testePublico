@@ -40,3 +40,9 @@ jobs:
         
       - name: Test4
         run: git status
+      
+      - name: Test5
+        run: |
+          git branch feature/teste
+          git commit -m "teste"
+          git push
