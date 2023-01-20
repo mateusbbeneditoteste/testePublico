@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: dev
+          ref: origin/dev
       
       - name: Create branch
         run: |
@@ -25,4 +25,4 @@ jobs:
 #      - name: Create branch
 #        run: |
 #          git branch branchteste
-#          git push -u origin branchteste
+#          git push -u origin/branchteste
