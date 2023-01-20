@@ -9,9 +9,20 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          ref: dev
       
       - name: Create branch
         run: |
-          git branch branch/my-new-branch
-          git push -u origin branch/my-new-branch
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
+          
+#      - name: Create branch
+#        run: |
+#          git branch branchteste
+#          git push -u origin branchteste
