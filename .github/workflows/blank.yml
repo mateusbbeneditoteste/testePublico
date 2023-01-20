@@ -43,6 +43,8 @@ jobs:
       
       - name: Test5
         run: |
+          git config --global user.email "mateus.b.benedito@gmail.com"
+          git config --global user.name "mateusbbenedito"
           git branch feature/teste
           git commit -m "teste"
           git push
