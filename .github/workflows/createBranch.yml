@@ -13,5 +13,5 @@ jobs:
       
       - name: Create branch
         run: |
-          git branch my-new-branch
-          git push -u origin my-new-branch
+          git branch branchteste
+          git push -u origin branchteste
