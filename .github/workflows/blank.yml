@@ -37,3 +37,6 @@ jobs:
           
       - name: Test3
         run: env | sort
+        
+      - name: Test4
+        run: git status
