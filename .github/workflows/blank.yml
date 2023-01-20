@@ -45,8 +45,6 @@ jobs:
         run: |
           git config --global user.email "mateus.b.benedito@gmail.com"
           git config --global user.name "mateusbbenedito"
-          git branch -b feature/teste
-          git check
-          git status
+          git checkout -b feature/teste
           git commit -m "teste"
           git push
