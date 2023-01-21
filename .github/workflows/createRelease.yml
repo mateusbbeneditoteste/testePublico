@@ -1,0 +1,31 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      baseName:
+        description: 'Branch Base'
+        required: true
+        
+      versionName:
+        description: 'Versão: (ex: 1.0.0)'
+        required: true
+
+jobs:
+  createPullRequest:
+    name: Create Pull Request
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Make changes to pull request
+        run: date +%s > report.txt
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: release/${{ github.event.inputs.versionName }}
+          base: ${{ github.event.inputs.baseName }}
+          delete-branch: false
