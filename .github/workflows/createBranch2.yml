@@ -20,3 +20,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           branch: 'release-notes'
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
